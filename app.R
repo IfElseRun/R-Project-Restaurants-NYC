@@ -12,7 +12,6 @@ library(plotly)
 library(shiny.router)
 
 
-#library(leaflet)
 library(leaflet)
 source('myUI.R')
 source('myServer.R')

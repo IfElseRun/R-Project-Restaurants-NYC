@@ -146,3 +146,16 @@ where
                          host = 'host',
                          dbname='databasename')
 ```
+## User Journey
+###Step One
+When a user comes to a leaflet interactive map that shows list of the restaurants that we get as a json response from Yelp api, by default Manhattan borough is selected. 
+
+![Step One](www/step1.png)
+
+###Step Two
+After that user will select a restaurant and get a popup that contains basic information about restaurant including Yelp Review Score. By clicking on restaurant name new page will be open. 
+
+###Step Three
+With basic analytics from NYC Inspection Dataset for specified restaurant in which we have plot with number of violations on which we have critical and non critical violations, we have gauge chart representing weighed score and tabular preview of violations with descriptions  
+![Step One](www/step3.png)
+

@@ -88,8 +88,6 @@ myUI <- fluidPage(
                          
                          selectInput("boro", "Borough", boro),
                          img(src="yelp.png", height = "120px", width="240px")
-                         #plotOutput("histCentile", height = 200),
-                         #plotOutput("scatterCollegeIncome", height = 250)
            )
        )
     )

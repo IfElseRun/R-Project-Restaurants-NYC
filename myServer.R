@@ -67,7 +67,7 @@ myserver <- function(input, output,session) {
               steps = list(
                 list(range = c(0, 250), color = "white"),
                 list(range = c(250, 400), color = "gray")))) 
-          fig <- fig %>%
+                 fig <- fig %>%
             layout(
               margin = list(l=20,r=30),
               font = list(color = "gray", family = "Arial"))
@@ -112,6 +112,7 @@ myserver <- function(input, output,session) {
           }
             
         })
+        #violation flag plot
         output$histogra <- renderPlotly({
           fig <- plot_ly(x = c("Critical", "Non Critical"), y = c(10,20), type = 'bar',marker = list(color = 'gray',
                                                                                                      line = list(color = 'gray', width = 0.5))) %>%

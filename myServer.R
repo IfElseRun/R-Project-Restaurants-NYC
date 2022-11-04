@@ -29,13 +29,12 @@ myserver <- function(input, output,session) {
                          host = 'host',
                          dbname='databasename')
         
-        
+        #database queries
         query_individual_business <- dbGetQuery(con, paste0("SELECT * FROM nyc_restaurants.clean_data where DBA = \"", restaurantQueryString ,"\";"))
         weighed_Score <- dbGetQuery(con, paste0("SELECT  ROUND(avg(WEIGHED_SCORE),0) FROM nyc_restaurants.clean_data where DBA = \"", restaurantQueryString ,"\";"))
         critical_flag  <- dbGetQuery(con,paste0("SELECT COUNT(CRITICAL_FLAG) FROM nyc_restaurants.clean_data where CRITICAL_FLAG = 'Critical' AND DBA = \"", restaurantQueryString ,"\";"))
         non_crtical_flag <-  dbGetQuery(con,paste0("SELECT COUNT(CRITICAL_FLAG) FROM nyc_restaurants.clean_data where CRITICAL_FLAG = 'Not Critical' AND DBA = \"", restaurantQueryString ,"\";"))
         violations <- dbGetQuery(con, paste0("SELECT INSPECTION_DATE, VIOLATION_DESCRIPTION FROM nyc_restaurants.clean_data where DBA = \"", restaurantQueryString ,"\" GROUP BY VIOLATION_DESCRIPTION;"))
- 
         query_individual_business_statistics <- dbGetQuery(con, paste0("CALL getRestaurantStatistics('",locationQueryString,"', '",restaurantQueryString,"');"))
         dbDisconnect(con)
         
@@ -52,6 +51,7 @@ myserver <- function(input, output,session) {
         output$table <- renderDataTable(query_individual_business)
         output$violations <- renderDataTable(violations)
         
+        #weighed score plot
         output$plot1 <- renderPlotly({
           fig <- plot_ly(
             type = "indicator",

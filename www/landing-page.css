@@ -1,0 +1,174 @@
+
+html, body {
+  height: 100% !important;
+}
+.landing-page {
+  background-image: url(landing-background.png);
+  width: 100%;
+  height: 650px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  border-bottom: 2px solid #e7e7e7;
+}
+.section-2 {
+  background-image: url(section-2.png);
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  margin-top: 50px;
+}
+#interactiveMap {
+  position: absolute;
+  width: 20%;
+  background: #ffffff;
+  margin-top: 390px;
+  left: 40%;
+  color: #1e282c;
+  font-size: 30px;
+  border-radius: 50px !important;
+}
+#interactiveMap:before {
+  content: "";
+  width: 0px;
+  height: 2px;
+  background: #1e282c;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  right: 24px;
+  transition: all 0.3s ease;
+}
+
+#interactiveMap:hover:before {
+  right: 34px;
+  width: 35px;
+}
+
+#interactiveMap:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent #1e282c;
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  right: 20px;
+  transition: all 0.3s ease;
+}
+
+#interactiveMap:hover:after {
+  right: 34px;
+  right: 30px;
+}
+
+.borough-dropdown {
+  top: 54%;
+}
+
+.see-more > .col-sm-3 {
+  background-color: #8D3819;
+  height: 250px;
+  margin: 50px;
+}
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+  height: 100%;
+}
+.navbar {
+  margin-bottom: 0;
+  background: rgb(117,116,113);
+  background: linear-gradient(0deg, rgba(117,116,113,0.6587009803921569) 0%, rgba(255,255,255,1) 14%, rgba(251,251,251,1) 100%, rgba(255,255,255,1) 100%);
+}
+.navbar-nav li:nth-child(2) {
+  display: none;
+}
+.content {
+  padding: 0;
+}
+.leaflet-popup-content > img {
+  width: 200px;
+  height:100px;
+}
+
+#grade {
+  position: absolute;
+  z-index: 10000;
+  top:100px;
+  left: 0;
+}
+
+input[type="number"] {
+  max-width: 80%;
+}
+
+div.outer {
+  position: fixed;
+  top: 41px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Customize fonts */
+body, label, input, button, select { 
+  font-family: 'Helvetica Neue', Helvetica;
+  font-weight: 200;
+}
+h1, h2, h3, h4 { font-weight: 400; }
+
+#controls {
+  /* Appearance */
+  background-color: white;
+  padding: 0 20px 20px 20px;
+  cursor: move;
+  /* Fade out while not hovering */
+  opacity: 0.65;
+  zoom: 0.9;
+  transition: opacity 500ms 1s;
+}
+#controls:hover {
+  /* Fade in while hovering */
+  opacity: 0.95;
+  transition-delay: 0;
+}
+
+/* Position and style citation */
+#cite {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 12px;
+}
+
+/* If not using map tiles, show a white background */
+.leaflet-container {
+  background-color: white !important;
+}
+.content-wrapper {
+  background-color: white;
+}
+#sidebarCollapsed {
+  background: rgb(145,160,167);
+background: linear-gradient(0deg, rgba(145,160,167,1) 0%, rgba(255,255,255,1) 72%, rgba(251,251,251,1) 100%, rgba(255,255,255,1) 100%);
+}
+.main-sidebar {
+  padding-top: 0;
+}
+.navbar-brand{
+  margin-left: 20px !important;
+}
+.nyc-logo {
+  background-color: #1e282c;
+  padding: 10px;
+  margin-left: 15px;
+}

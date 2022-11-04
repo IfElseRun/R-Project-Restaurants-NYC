@@ -1,16 +1,17 @@
 # Server logic
+#YELP API
 source(file="yelp-api.R")
 source(file="nyc-api.R")
 
 myserver <- function(input, output,session) {
   
-  #Router
-  observeEvent(getQueryString(session)$page, {
-    currentQueryString <- getQueryString(session)$page # alternative: parseQueryString(session$clientData$url_search)$page
-    if(is.null(input$navbarID) || !is.null(currentQueryString) && currentQueryString != input$navbarID){
-      freezeReactiveValue(input, "navbarID")
-      updateNavbarPage(session, "navbarID", selected = currentQueryString)
-    }
+    #Router Logic
+    observeEvent(getQueryString(session)$page, {
+      currentQueryString <- getQueryString(session)$page # alternative: parseQueryString(session$clientData$url_search)$page
+      if(is.null(input$navbarID) || !is.null(currentQueryString) && currentQueryString != input$navbarID){
+        freezeReactiveValue(input, "navbarID")
+        updateNavbarPage(session, "navbarID", selected = currentQueryString)
+      }
     
     #restaurant page logic
     if(currentQueryString == "restaurant") {

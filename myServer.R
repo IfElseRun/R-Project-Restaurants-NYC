@@ -13,7 +13,7 @@ myserver <- function(input, output,session) {
         updateNavbarPage(session, "navbarID", selected = currentQueryString)
       }
     
-    #restaurant page logic
+    #restaurant page logic and query param logic
     if(currentQueryString == "restaurant") {
       restaurantQueryString <- getQueryString(session)$restaurant
       zipcodeQueryString <- getQueryString(session)$zipcode
@@ -27,7 +27,7 @@ myserver <- function(input, output,session) {
                          user = 'user',
                          password = 'password',
                          host = 'host',
-                         dbname='nyc_restaurants')
+                         dbname='databasename')
         
         
         query_individual_business <- dbGetQuery(con, paste0("SELECT * FROM nyc_restaurants.clean_data where DBA = \"", restaurantQueryString ,"\";"))
